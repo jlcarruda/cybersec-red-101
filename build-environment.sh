@@ -11,8 +11,8 @@ docker pull tleemcjr/metasploitable2
 docker run -d \
     --network vulnerable \
     --ip="10.0.0.3" \
-    --name metasploitable \
-    --hostname metasploitable2 \
+    --name target1 \
+    --hostname metasploitable \
     tleemcjr/metasploitable2 \
     sh -c "/bin/services.sh"
 

@@ -1,0 +1,53 @@
+version: "3"
+
+networks:
+  vulnerable:
+    name: 'vulnerable'
+    driver: bridge
+
+services:
+  attacker:
+    image: parrotsec/security:latest
+    container_name: parrot
+    networks:
+      - vulnerable
+    volumes:
+      - /dev/shm:/dev/shm
+      - type: bind
+        source: /tmp/.X11-unix
+        target: /tmp/.X11-unix
+    environment:
+      - DISPLAY={$DISPLAY}
+    tty: true
+    stdin_open: true
+    privileged: true
+    depends_on:
+      - webgoat
+      - juiceshop
+      # - metasploitable
+  
+  metasploitable:
+    image: tleemcjr/metasploitable2:latest
+    command: /bin/sh -c "/bin/services.sh"
+    container_name: metasploitable
+    networks:
+      - vulnerable
+  
+  webgoat:
+    image: webgoat/goatandwolf:latest
+    container_name: webgoat
+    networks:
+      - vulnerable
+    ports:
+      - 8080:8080
+      - 9090:9090
+      - 80:8888
+  
+  juiceshop:
+    image: bkimminich/juice-shop:latest
+    container_name: juiceshop
+    networks:
+      - vulnerable
+    ports:
+      - 3000:3000
+

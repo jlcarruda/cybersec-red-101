@@ -1,6 +1,7 @@
 FROM parrotsec/security:latest
 
-RUN apt update && apt upgrade -y
+RUN apt update
+ # && apt upgrade -y
 RUN apt install -y openvpn
 # GUI packages 
 # RUN apt install -y hicolor-icon-theme \

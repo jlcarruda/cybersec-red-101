@@ -28,9 +28,9 @@ services:
     networks:
       - vulnerable
     depends_on:
-      - webgoat
       - juiceshop
-      - ctf
+      # - webgoat
+      # - ctf
 
   webgoat:
     image: webgoat/goatandwolf:latest

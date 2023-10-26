@@ -54,6 +54,7 @@ services:
 
   ctf:
     image: hightechsec/web-ctf-container
+    container_name: ctf
     networks:
       - vulnerable
     ports:

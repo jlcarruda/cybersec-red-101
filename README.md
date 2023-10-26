@@ -26,9 +26,13 @@ It was designed for Linux systems, but can be adapted to other systems.
 
 ## Containers
 
-We have three containers configured on this repo, plus a network for connection between them being isolated
+We have three target containers and two attacker containers configured on this repo, plus a network for connection between them being isolated
 
+#### Attackers
 - `attacker`: the attacker container, based on ParrotOS Image. This is the main workspace we will use for targeting the other containers. Its used as base for `local-attacker`, and can be used for CTF purposes.
 - `local-attacker`: an extension from `attacker`, with the difference that its configured to be on the same network as the targets.
+
+#### Targets
 - `juiceshop`: [OWASP Juiceshop](https://owasp.org/www-project-juice-shop) vulnerable web app
 - `webgoat`: [OWASP Webgoat](https://owasp.org/www-project-webgoat) vulnerable web app 
+- `ctf`: Web CTF like container

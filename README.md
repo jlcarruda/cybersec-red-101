@@ -15,6 +15,11 @@ After the images are pulled and the containers are up, it should enter in `attac
 You can use `ping` or `curl` to check if the containers are up and running.
 
 ![alt](docs/check-connectivity.png)
+
+### `start` script
+The `start` script was made to automate the process of starting and dropping the containers and network when the main `attacker` container is exitted.
+It was designed for Linux systems, but can be adapted to other systems.
+
 ## Containers
 
 We have three containers configured on this repo, plus a network for connection between them being isolated

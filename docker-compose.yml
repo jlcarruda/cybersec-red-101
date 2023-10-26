@@ -8,7 +8,7 @@ networks:
 services:
   attacker:
     image: parrotsec/security:latest
-    container_name: parrot
+    container_name: attacker
     networks:
       - vulnerable
     volumes:
@@ -36,6 +36,8 @@ services:
   webgoat:
     image: webgoat/goatandwolf:latest
     container_name: webgoat
+    environment:
+      - TZ=America/Sao_Paulo
     networks:
       - vulnerable
     ports:

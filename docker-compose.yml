@@ -30,15 +30,8 @@ services:
     depends_on:
       - webgoat
       - juiceshop
-      # - metasploitable
-  
-  metasploitable:
-    image: tleemcjr/metasploitable2:latest
-    command: /bin/sh -c "/bin/services.sh"
-    container_name: metasploitable
-    networks:
-      - vulnerable
-  
+      - ctf
+
   webgoat:
     image: webgoat/goatandwolf:latest
     container_name: webgoat
@@ -59,3 +52,9 @@ services:
     ports:
       - 3000:3000
 
+  ctf:
+    image: hightechsec/web-ctf-container
+    networks:
+      - vulnerable
+    ports:
+      - 7000:80

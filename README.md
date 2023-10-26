@@ -11,7 +11,10 @@ The `attacker` container will fire up the targets.
 ```
 docker compose run attacker bash
 ```
+After the images are pulled and the containers are up, it should enter in `attacker`'s bash.
+You can use `ping` or `curl` to check if the containers are up and running.
 
+![alt](docs/check-connectivity.png)
 ## Containers
 
 We have three containers configured on this repo, plus a network for connection between them being isolated

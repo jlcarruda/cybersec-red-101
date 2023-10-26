@@ -6,13 +6,14 @@ networks:
     driver: bridge
 
 services:
-  attacker:
-    image: parrotsec/security:latest
-    container_name: attacker
-    networks:
-      - vulnerable
+  attacker: &attacker-base
+    command: bash
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: parrot
     volumes:
-      - /dev/shm:/dev/shm
+      - ./shm:/dev/shm
       - type: bind
         source: /tmp/.X11-unix
         target: /tmp/.X11-unix
@@ -21,6 +22,11 @@ services:
     tty: true
     stdin_open: true
     privileged: true
+  
+  local-attacker:
+    <<: *attacker-base
+    networks:
+      - vulnerable
     depends_on:
       - webgoat
       - juiceshop

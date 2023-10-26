@@ -23,5 +23,5 @@ There's a helper script `unmount-environment.sh` for cleaning up only the contai
 We have three containers configured on this repo, plus a network for connection between them being isolated
 
 - parrot: the attacker container. This is the main workspace we will use for targeting the other containers
-- juiceshop: OWASP Juiceshop vulnerable web app
-- webgoat: [https://owasp.org/www-project-webgoat/](OWASP Webgoat) vulnerable web app 
+- juiceshop: [OWASP Juiceshop](https://owasp.org/www-project-juice-shop) vulnerable web app
+- webgoat: [OWASP Webgoat](https://owasp.org/www-project-webgoat) vulnerable web app 

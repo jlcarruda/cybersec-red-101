@@ -2,6 +2,10 @@
 This repo's objective is to focus all configurations for creating a local cybersecurity lab on you local machine.
 
 It focus on creating `Docker containers and network` to create an environment for testing.
+---
+# DISCLAIMER
+While running the target containers, you PC is going to be very vulnerable to attacks. Its recommended to run this on a VM or a machine without internet connection.
+---
 
 ## Requirements
 - Docker
